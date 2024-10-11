@@ -3,7 +3,7 @@
 
 pkgname=s2png-git
 pkgver=v0.11.1.r135
-pkgrel=2
+pkgrel=3
 
 pkgdesc='stuff to PNG'
 arch=('any')
@@ -25,8 +25,7 @@ pkgver() {
 build() {
     cd "$srcdir/s2png/"
     git reset --hard HEAD > /dev/null 2>&1
-    just test
-    just release-linux
+    cargo build --release --all-features
     mv "$srcdir/s2png/target/release/s2png" ./s2png_release_bin
     strip s2png_release_bin
 }
