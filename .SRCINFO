@@ -1,7 +1,7 @@
 pkgbase = s2png-git
 	pkgdesc = stuff to PNG
-	pkgver = v0.11.1.r134
-	pkgrel = 1
+	pkgver = v0.11.1.r135
+	pkgrel = 2
 	url = https://github.com/dbohdan/s2png
 	arch = any
 	license = GPLv2

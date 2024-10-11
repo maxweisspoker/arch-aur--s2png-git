@@ -2,8 +2,8 @@
 # Contributor:  D. Bohdan <http://dbohdan.com/contact/>
 
 pkgname=s2png-git
-pkgver=v0.11.1.r134
-pkgrel=1
+pkgver=v0.11.1.r135
+pkgrel=2
 
 pkgdesc='stuff to PNG'
 arch=('any')
@@ -25,9 +25,9 @@ pkgver() {
 build() {
     cd "$srcdir/s2png/"
     git reset --hard HEAD > /dev/null 2>&1
-    env TARGET="${CARCH}-unknown-linux-musl" just test
-    env TARGET="${CARCH}-unknown-linux-musl" just release-linux
-    mv "$srcdir/s2png/target/${CARCH}-unknown-linux-musl/release/s2png" ./s2png_release_bin
+    just test
+    just release-linux
+    mv "$srcdir/s2png/target/release/s2png" ./s2png_release_bin
     strip s2png_release_bin
 }
 
